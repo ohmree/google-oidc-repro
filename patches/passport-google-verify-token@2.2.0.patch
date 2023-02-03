@@ -1,0 +1,13 @@
+diff --git a/lib/strategy.js b/lib/strategy.js
+index bdbe7d7e7ff6109c2f0d7974ee9b3f15fd7fc944..50c31161595c0aee80721df5d7de9fa6f9252ce1 100644
+--- a/lib/strategy.js
++++ b/lib/strategy.js
+@@ -63,7 +63,7 @@ class GoogleTokenStrategy extends passport_strategy_1.Strategy {
+      */
+     authenticate(req, options) {
+         options = options || {};
+-        const idToken = this.paramFromRequest(req, 'id_token') ||
++        const idToken = this.paramFromRequest(req, 'credential') ||
+             this.paramFromRequest(req, 'access_token') ||
+             this.getBearerToken(req.headers);
+         if (!idToken) {
